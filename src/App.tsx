@@ -30,7 +30,10 @@ function App() {
       <button onClick={createTodo}>Add New</button>
       <ul>
         {todos.map((todo) => (
-          <li onClick={() => deleteTodo(todo.id)} key={todo.id}>{todo.content}</li>
+          <li onClick={() => deleteTodo(todo.id)} key={todo.id}>
+            {todo.content}
+            {todo.isDone}
+            </li>
         ))}
       </ul>
       <button onClick={signOut}>Sign out</button>
