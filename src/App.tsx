@@ -32,7 +32,7 @@ function App() {
         {todos.map((todo) => (
           <li onClick={() => deleteTodo(todo.id)} key={todo.id}>
             {todo.content}  Status:
-            String({todo.isDone})
+            {String(todo.isDone)}
             </li>
         ))}
       </ul>
