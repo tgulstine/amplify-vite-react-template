@@ -7,32 +7,32 @@ const client = generateClient<Schema>();
 
 function App() {
   const { signOut } = useAuthenticator();
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
+  const [shipments, setShipments] = useState<Array<Schema["Shipment"]["type"]>>([]);
 
   useEffect(() => {
-    client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
+    client.models.Shipment.observeQuery().subscribe({
+      next: (data) => setShipments([...data.items]),
     });
   }, []);
 
-  function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Todo content") });
+  function createShipment() {
+    //client.models.Shipment.create({ origin: window.prompt("Shipment origin") });
   }
 
     
-  function deleteTodo(id: string) {
-    client.models.Todo.delete({ id })
+  function deleteShipment(id: string) {
+    client.models.Shipment.delete({ id })
   }
 
   return (
     <main>
       <h1>Task List</h1>
-      <button onClick={createTodo}>Add New</button>
+      <button onClick={createShipment}>Add New</button>
       <ul>
-        {todos.map((todo) => (
-          <li onClick={() => deleteTodo(todo.id)} key={todo.id}>
-            {todo.content}  Status:
-            {String(todo.isDone)}
+        {shipments.map((shipment) => (
+          <li onClick={() => deleteShipment(shipment.id)} key={shipment.id}>
+            {shipment.origin}  
+            {shipment.destination}
             </li>
         ))}
       </ul>
