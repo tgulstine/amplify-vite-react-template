@@ -102,7 +102,7 @@ const ShipmentForm = () => {
     setShowForm(true);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: string) => {
     setShipments(shipments.filter(shipment => shipment.id !== id));
   };
 
