@@ -16,14 +16,15 @@ const schema = a.schema({
       driver: a.string().required(),
       capacity: a.integer(),
       currentLocation: a.string(),
-      shipments: a.hasMany('Shipment','id'),
+      shipments: a.hasMany('Shipment','shipmentId'),
   }).authorization((allow) => [allow.publicApiKey()]),
   Shipment: a.model({
+      shipmentId: a.id().required(),
       origin: a.string().required(),
       destination: a.string().required(),
       status: a.string().required(),
       eta: a.timestamp(),
-      vehicle: a.belongsTo('Vehicle','id'),
+      vehicle: a.belongsTo('Vehicle','shipmentId'),
   }).authorization((allow) => [allow.publicApiKey()])
 
 });

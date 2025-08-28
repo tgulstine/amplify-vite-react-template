@@ -30,7 +30,7 @@ function App() {
       <button onClick={createShipment}>Add New</button>
       <ul>
         {shipments.map((shipment) => (
-          <li onClick={() => deleteShipment(shipment.id)} key={shipment.id}>
+          <li onClick={() => deleteShipment(shipment.shipmentId)} key={shipment.shipmentId}>
             {shipment.origin}  
             {shipment.destination}
             </li>
