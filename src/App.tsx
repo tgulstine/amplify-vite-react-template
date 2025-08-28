@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Package, Truck, MapPin, Calendar, Plus, Edit2, Trash2 } from 'lucide-react';
 
 const ShipmentForm = () => {
