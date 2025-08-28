@@ -16,7 +16,7 @@ const schema = a.schema({
       driver: a.string().required(),
       capacity: a.integer(),
       currentLocation: a.string(),
-      shipments: a.hasMany('Shipment','ShipmentId'),
+      shipments: a.hasMany('Shipment','shipmentId'),
   }).authorization((allow) => [allow.publicApiKey()]),
   Shipment: a.model({
       shipmentId: a.id(),
