@@ -10,14 +10,14 @@ const schema = a.schema({
   Todo: a.model({
       content: a.string(),
       isDone: a.boolean()
-    }),
+    }).authorization((allow) => [allow.publicApiKey()]),
   Vehicle: a.model({
       licensePlate: a.string().required(),
       driver: a.string().required(),
       capacity: a.integer(),
       currentLocation: a.string(),
       shipments: a.hasMany('Shipment','ShipmentId'),
-  }),
+  }).authorization((allow) => [allow.publicApiKey()]),
   Shipment: a.model({
       shipmentId: a.id(),
       origin: a.string().required(),
@@ -25,8 +25,8 @@ const schema = a.schema({
       status: a.string().required(),
       eta: a.timestamp(),
       vehicle: a.belongsTo('Vehicle','shipmentId'),
-  })
-  .authorization((allow) => [allow.publicApiKey()]),
+  }).authorization((allow) => [allow.publicApiKey()])
+
 });
 
 export type Schema = ClientSchema<typeof schema>;
