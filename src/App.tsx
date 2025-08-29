@@ -143,13 +143,13 @@ const ShipmentForm = () => {
 
       {/* Shipment Form */}
       {showForm && (
-        <div className="container">
+        <div class="container">
           <h2>
             <Package className="text-blue-600" size={24} />
             {editingId ? 'Edit Shipment' : 'Add New Shipment'}
           </h2>
           
-          <div className="label">
+          <div class="label">
               Tracking Number *
           </div>
           <div>
@@ -163,7 +163,7 @@ const ShipmentForm = () => {
             />
           </div>
 
-          <div className="label">
+          <div class="label">
               Recipient *
           </div>
           <div>
@@ -177,7 +177,7 @@ const ShipmentForm = () => {
             />
           </div>
 
-          <div className="label">
+          <div class="label">
               Origin *
           </div>
           <div>
