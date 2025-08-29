@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Package, Truck, MapPin, Calendar, Plus, Edit2, Trash2 } from 'lucide-react';
+import './App.css'; // Import the CSS file
 
 const ShipmentForm = () => {
   const [shipments, setShipments] = useState([
@@ -208,7 +209,7 @@ const ShipmentForm = () => {
           <div className="label">
             Carrier *
           </div>
-	        <div>
+          <div>
               <select
                 name="carrier"
                 value={formData.carrier}
@@ -238,7 +239,7 @@ const ShipmentForm = () => {
           <div className="label">
               Weight (lbs)
           </div>
-         	<div>     
+          <div>     
             <input
                 type="number"
                 step="0.1"
@@ -252,32 +253,32 @@ const ShipmentForm = () => {
           <div className="label">
             Dimensions (L×W×H)
           </div>
-	        <div>
-            <input
-              type="text"
-              name="dimensions"
-              value={formData.dimensions}
-              onChange={handleInputChange}
-              placeholder="e.g., 12x8x6"
-            />
+          <div>
+          <input
+          type="text"
+          name="dimensions"
+          value={formData.dimensions}
+          onChange={handleInputChange}
+          placeholder="e.g., 12x8x6"
+          />
           </div>
 
           <div className="label">
             Ship Date
           </div>
-	        <div>
-            <input
-              type="date"
-              name="shipDate"
-              value={formData.shipDate}
-              onChange={handleInputChange}
-              />
+          <div>
+          <input
+          type="date"
+          name="shipDate"
+          value={formData.shipDate}
+          onChange={handleInputChange}
+          />
           </div>
 
           <div className="label">
             Estimated Delivery
           </div>
-				  <div>
+          <div>
             <input
               type="date"
               name="estimatedDelivery"
@@ -285,7 +286,6 @@ const ShipmentForm = () => {
               onChange={handleInputChange}
               />
           </div>
-
           <div>
             <button
               type="button"
