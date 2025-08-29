@@ -353,8 +353,8 @@ const ShipmentForm = () => {
             </div>
 
             {shipments.map((shipment) => (
-
-                    <div class="label">
+              <div>
+                    <div className="label">
                       {shipment.id}
                     </div>
                     <div>
@@ -400,6 +400,8 @@ const ShipmentForm = () => {
                         <Trash2 size={16} />
                       </button>
                     </div>
+              </div>
+
             ))}
           </div>
         )}
