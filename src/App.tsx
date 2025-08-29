@@ -143,13 +143,13 @@ const ShipmentForm = () => {
 
       {/* Shipment Form */}
       {showForm && (
-        <div class="container">
+        <div className="container">
           <h2>
             <Package className="text-blue-600" size={24} />
             {editingId ? 'Edit Shipment' : 'Add New Shipment'}
           </h2>
           
-          <div class="label">
+          <div className="label">
               Tracking Number *
           </div>
           <div>
@@ -163,7 +163,7 @@ const ShipmentForm = () => {
             />
           </div>
 
-          <div class="label">
+          <div className="label">
               Recipient *
           </div>
           <div>
@@ -177,7 +177,7 @@ const ShipmentForm = () => {
             />
           </div>
 
-          <div class="label">
+          <div className="label">
               Origin *
           </div>
           <div>
@@ -318,7 +318,7 @@ const ShipmentForm = () => {
           </div>
         ) : (
           <div className="container">
-            <div>
+            <div className="label">
               Shipment Id
             </div>
             <div>
@@ -353,8 +353,8 @@ const ShipmentForm = () => {
             </div>
 
             {shipments.map((shipment) => (
-                  <div>
-                    <div>
+
+                    <div class="label">
                       {shipment.id}
                     </div>
                     <div>
@@ -400,7 +400,6 @@ const ShipmentForm = () => {
                         <Trash2 size={16} />
                       </button>
                     </div>
-                  </div>
             ))}
           </div>
         )}
